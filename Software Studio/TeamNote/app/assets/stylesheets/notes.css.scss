@@ -1,0 +1,85 @@
+// Place all the styles related to the Notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+p {
+	color:black;
+	font:Verdana, sans-serif;
+}
+
+h1 {
+	color:blue;
+	font:Times New Roman, serif;
+	font-size: large;
+	text-align: center;
+}
+
+td {
+	padding: 10px;
+}
+
+.noteTableHeadings {
+	color: blue;
+	padding: 10 px
+}
+
+.existingNoteButtons {
+    display: inline-block;
+    /* Font styles */
+    text-decoration: none;
+    color: red;
+}
+
+#controlButtons {
+	color: red;
+}
+
+.simpleInput {
+    display: block;
+    padding: 5px;
+    border: 4px solid #F1B720;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+ 
+.simpleInput:hover {
+    border-radius: 8px
+}
+ 
+.simpleInput:focus {
+    outline: none;
+    border-radius: 8px;
+    border-color: #EBD292;
+}
+
+.noteHeaders {
+	color: blue;
+	text-alignt: center;
+	font-weight: bold;
+}
+
+.createdNote {
+	display: block;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: linear-gradient(#eee, #fff);
+    transition: all 0.3s ease-out;
+    box-shadow: 
+        inset 0 1px 4px rgba(0,0,0,0.4);
+    padding: 5px;
+    color: #555;
+}
+
+.createdNoteTable {
+    border: 1px solid rgba(255,255,255,0.6);
+    background: linear-gradient(#eee, #fff);
+    transition: all 0.3s ease-out;
+    box-shadow: 
+        inset 0 1px 4px rgba(0,0,0,0.4);
+    color: #555;
+}
+
+.previewBox {
+    background: grey
+    
+}

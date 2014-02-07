@@ -1,0 +1,46 @@
+
+<p class = "noteHeaders">
+  Subject:
+ </p>
+ <p class = "createdNote">
+  <%= @note.subject %>
+</p>
+
+<p class = "noteHeaders">
+  Content:
+ </p>
+ <p class = "createdNote">
+  <%= @note.content %>
+</p>
+
+<br />
+
+<p class = "noteHeaders">
+	Users who can edit this note:
+</p>
+
+<ul>
+<% @editors.each do |username| %>
+	<li>
+		<%= username %>
+	</li>
+<% end %>
+</ul>
+
+<p class = "noteHeaders">
+	Users who can view this note:
+</p>
+
+<ul>
+<% @viewers.each do |username| %> 
+	<li>
+		<%= username %>
+	</li>
+<% end %>
+</ul>
+
+
+<p class="controlButtons">
+	<%= link_to 'Edit', edit_note_path(@note) %> |
+	<%= link_to 'Back', notes_path %>
+</p>

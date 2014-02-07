@@ -1,0 +1,45 @@
+<% content_for(:head) do %>
+<%= javascript_include_tag 'hover' %>
+<% end %>
+
+<h1>Notes</h1>
+
+<div id="previewBox"></div>
+<table>
+  <thead>
+    <tr>
+      <th class="noteTableHeadings">Subject</th>
+      <th class="noteTableHeadings">Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @editNotes.each do |note| %>
+      <tr>
+        <td class = "createdNoteTable"><%= note.subject %></td>
+        <td class = "createdNoteTable"><%= note.content %></td>
+        <td class="existingNoteButtons showButton"><%= link_to 'Show and View Permissions', note %> </td>
+        <td class="existingNoteButtons"><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td class="existingNoteButtons"><%= link_to 'Add Permission', new_note_alc_path(:note_id => note.id) %>
+        <td class="existingNoteButtons"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class = 'existingNoteButtons'><%= link_to 'Show Preview' , note, :remote=> true %></td>
+      </tr>
+    <% end %>
+
+    <% @viewNotes.each do |note| %>
+      <tr>
+        <td class = "createdNoteTable"><%= note.subject %></td>
+        <td class = "createdNoteTable"><%= note.content %></td>
+        <td class="existingNoteButtons showButton"><%= link_to 'Show and View Permissions', note %> </td>
+        <td class = 'existingNoteButtons'><%= link_to 'Show Preview' , note, :remote=> true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="controlButtons"><%= link_to 'New Note', new_note_path %></div>

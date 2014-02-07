@@ -1,0 +1,27 @@
+<h1>Listing alcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>New</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alcs.each do |alc| %>
+      <tr>
+        <td><%= alc.new %></td>
+        <td><%= link_to 'Show', alc %></td>
+        <td><%= link_to 'Edit', edit_alc_path(alc) %></td>
+        <td><%= link_to 'Destroy', alc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alc', new_alc_path %>

@@ -1,0 +1,26 @@
+<%= form_for(@alc) do |f| %>
+  <% if @alc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alc.errors.count, "error") %> prohibited this alc from being saved:</h2>
+
+      <ul>
+      <% @alc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :note_id, value: @note_id %>
+    <%= f.label :user_name, "User Name: " %>
+    <%= f.text_field :user_name %>
+    <%= f.check_box :read %>
+    <%= f.label :read, "Add Read Permission" %>
+    <%= f.check_box :write %>
+    <%= f.label :write, "Add Write Permission" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Permission" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p>
+  <%= f.label :user_id, "User ID: " %>
+  <%= f.text_field :user_id %>
+  <%= f.check_box :read %>
+  <%= f.label :read, "Add Read Permission" %>
+  <%= f.check_box :write %>
+  <%= f.label :write, "Add Write Permission" %>
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove all permissions" %>
+</p> 

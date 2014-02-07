@@ -1,0 +1,7 @@
+function newWindow() {
+	var w = window.open();
+	$(w.document.body).html("<%= @note.content %>")
+}
+
+console.log("here");
+newWindow();
